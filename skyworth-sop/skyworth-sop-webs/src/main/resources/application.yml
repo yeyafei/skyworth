@@ -1,0 +1,30 @@
+# Tomcat
+server:
+    tomcat:
+        uri-encoding: UTF-8
+        max-threads: 1000
+        min-spare-threads: 30
+    port: 8080
+    servlet:
+        context-path: /
+
+spring:
+    servlet:
+        multipart:
+            max-file-size: 100MB
+            max-request-size: 100MB
+            enabled: true
+    freemarker:
+      suffix: .html
+      request-context-attribute: request
+    aop:
+      proxy-target-class: true  
+      
+    data:
+      patterns: 
+        - yyyy-MM-dd HH:mm:ss
+    http:
+      encoding:
+        force: true
+        charset: utf-8
+        enabled: true
