@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.skyworth.sop.test.dao.TestDao">
+
+    <resultMap type="com.skyworth.sop.test.entity.TestEntity" id="testMap">
+        <result property="id" column="id"/>
+        <result property="test1" column="test1"/>
+        <result property="test2" column="test2"/>
+        <result property="createName" column="create_name"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateName" column="update_name"/>
+        <result property="updateTime" column="update_time"/>
+        <result property="remarks" column="remarks"/>
+        <result property="delFlag" column="del_flag"/>
+    </resultMap>
+
+	<!-- 分页 -->
+	<select id="queryPage" resultType="com.skyworth.sop.test.vo.TestVo">
+		SELECT * FROM test WHERE 1=1
+		<if test="frm.id != null"> and id = #{frm.id} </if>
+		<if test="frm.test1 != null and frm.test1 != '' "> and test1 = #{frm.test1} </if>
+		<if test="frm.test2 != null and frm.test2 != '' "> and test2 = #{frm.test2} </if>
+	</select>
+</mapper>

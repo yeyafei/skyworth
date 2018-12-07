@@ -1,0 +1,17 @@
+package ${package}.${moduleName}.dao;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import ${package}.${moduleName}.entity.${className}Entity;
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+
+/**
+ * ${comments}
+ * 
+ * @author ${author}
+ * @date ${datetime}
+ */
+@Mapper
+public interface ${className}Dao extends BaseMapper<${className}Entity> {
+	
+}

@@ -33,6 +33,23 @@ public class BaseExceptionHandler {
         return r;
     }
 
+
+
+    /**
+     * 自定义base异常
+     *
+     * @param e
+     * @return
+     */
+    @SuppressWarnings("rawtypes")
+    @ExceptionHandler(BaseException.class)
+    public R handleServiceException(BaseException e) {
+        R r = new R();
+        r.setCode(e.getErrorCode());
+        r.setMsg(e.getMessage());
+        return r;
+    }
+
     /**
      * 系统exception异常
      *

@@ -1,4 +1,4 @@
-package com.skyworth.sop;
+package com.skyworth;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
