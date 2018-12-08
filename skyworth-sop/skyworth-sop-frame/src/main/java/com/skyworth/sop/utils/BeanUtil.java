@@ -28,6 +28,7 @@ public class BeanUtil {
 			destList=new ArrayList<T>(oriList.size());
 			for (@SuppressWarnings("rawtypes")
 			Iterator iterator = oriList.iterator(); iterator.hasNext();) {
+				@SuppressWarnings("deprecation")
 				T dest=cls.newInstance();
                 ConvertUtils.register(new DateConverter(null), Date.class);
 				BeanUtils.copyProperties(dest, iterator.next());
@@ -38,6 +39,7 @@ public class BeanUtil {
     }
 	
 	public static <T> T copyNew(Object src,Class<T> cls) throws IllegalAccessException, InvocationTargetException, InstantiationException {
+		@SuppressWarnings("deprecation")
 		T dest=cls.newInstance();
         ConvertUtils.register(new DateConverter(null), Date.class);
 		BeanUtils.copyProperties(dest, src);

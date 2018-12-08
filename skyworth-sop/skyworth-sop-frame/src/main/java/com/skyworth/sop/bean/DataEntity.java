@@ -5,6 +5,7 @@ import java.util.Date;
 import org.hibernate.validator.constraints.Length;
 
 import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableLogic;
 import com.baomidou.mybatisplus.enums.FieldFill;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 public abstract class DataEntity<T> extends BaseEntity<T> {
 
 	private static final long serialVersionUID = 1L;
-
+	@TableId("id")
 	protected Integer id; //id
 	protected String remarks; // 备注
 	@TableField(fill = FieldFill.INSERT) 

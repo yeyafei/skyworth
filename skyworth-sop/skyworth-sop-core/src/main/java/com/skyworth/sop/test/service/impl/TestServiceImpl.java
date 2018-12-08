@@ -21,14 +21,12 @@ import com.skyworth.sop.utils.Query;
  */
 @Service("testService")
 public class TestServiceImpl extends ServiceImpl<TestDao, TestEntity> implements TestService {
-//	@Autowired
-//	private TestDao testDao;
+	@Autowired
+	private TestDao testDao;
 	@Override
 	public R<Page<TestVo>> queryPage(TestFrm frm) {
 		Page<TestVo> page = new Query<TestVo>(frm.pageParam()).getPage();
-//		page.setRecords(testDao.queryPage(page, frm));
+		page.setRecords(testDao.queryPage(page, frm));
 		return new R<Page<TestVo>>().ok(page);
 	}
-
-
 }

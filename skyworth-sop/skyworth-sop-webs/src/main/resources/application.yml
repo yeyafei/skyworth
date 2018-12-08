@@ -8,7 +8,6 @@ server:
     servlet:
         context-path: /skyworth-sop
 
-# mysql
 spring:
     profiles:
         active: dev
@@ -35,11 +34,10 @@ spring:
         charset: utf-8
         enabled: true
 
-
 #mybatis
 mybatis-plus:
-  mapper-locations: classpath*:mapper/**/*.xml
-  #实体扫描，多个package用逗号或者分号分隔
+  mapper-locations: classpath*:/mapper/**/*Dao.xml
+    #实体扫描，多个package用逗号或者分号分隔
   typeAliasesPackage: com.skyworth.sop.*.entity
   global-config:
     #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
@@ -65,6 +63,8 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: false
     call-setters-on-nulls: true
+    
+    
 logging:
   level:
     org.springframework.web: DEBUG
