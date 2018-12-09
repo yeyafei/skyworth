@@ -4,13 +4,12 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import org.springframework.core.annotation.Order;
 
+import com.baomidou.mybatisplus.mapper.BaseMapper;
+import com.baomidou.mybatisplus.plugins.Page;
 import com.skyworth.sop.test.entity.TestEntity;
 import com.skyworth.sop.test.frm.TestFrm;
 import com.skyworth.sop.test.vo.TestVo;
-import com.baomidou.mybatisplus.mapper.BaseMapper;
-import com.baomidou.mybatisplus.plugins.Page;
 
 /**
  * 测试表TEST
