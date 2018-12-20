@@ -61,9 +61,9 @@ public class BaseExceptionHandler {
     public R handleException(Exception e) {
         logger.error(e.getMessage(), e);
         R r = new R();
-        r.setCode(ErrorCode.SysErrorType.SYSTEM_ERROR.getCode());
+        r.setCode(ErrorCode.SYSTEM_ERROR.getCode());
         if (e.getMessage() != null && e.getMessage().length() > 100) {
-            r.setMsg(ErrorCode.SysErrorType.SYSTEM_ERROR.getDesc());
+            r.setMsg(ErrorCode.SYSTEM_ERROR.getDesc());
         } else {
             r.setMsg(e.getMessage());
         }

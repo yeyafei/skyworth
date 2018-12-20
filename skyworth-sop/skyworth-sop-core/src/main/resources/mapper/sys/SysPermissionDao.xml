@@ -18,5 +18,14 @@
         <result property="delFlag" column="del_flag"/>
     </resultMap>
 
+	<select id="findByUserId" resultType="com.skyworth.sop.sys.entity.SysPermissionEntity">
+		select p.*
+		from sys_user u
+		LEFT JOIN sys_user_role sru on u.id= sru.user_id
+		LEFT JOIN sys_role r on sru.role_id=r.id
+		LEFT JOIN sys_role_per spr on spr.role_id=r.id
+		LEFT JOIN sys_permission p on p.id =spr.per_id
+		where u.id=#{userId}
+	</select>
 
 </mapper>

@@ -3,6 +3,7 @@ package com.skyworth.sop.sys.entity;
 import com.baomidou.mybatisplus.annotations.TableName;
 
 import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.springframework.security.core.GrantedAuthority;
 
 import com.skyworth.sop.bean.DataEntity;
 
@@ -14,7 +15,7 @@ import com.skyworth.sop.bean.DataEntity;
  * @date 2018-12-17 15:32:08
  */
 @TableName("sys_permission")
-public class SysPermissionEntity extends DataEntity<SysPermissionEntity> {
+public class SysPermissionEntity extends DataEntity<SysPermissionEntity>  implements GrantedAuthority {
 
 	private static final long serialVersionUID = 1L;
     
@@ -97,5 +98,18 @@ public class SysPermissionEntity extends DataEntity<SysPermissionEntity> {
     @Override
 	public String toString() {
 	     return ReflectionToStringBuilder.toString(this);
+	}
+
+	@Override
+	public String getAuthority() {
+		return this.perUrl + ";" + this.perName;
+	}
+
+	public SysPermissionEntity() {
+	}
+
+	public SysPermissionEntity(String url,  String perName) {
+		this.perUrl = url;
+		this.perName = perName;
 	}
 }

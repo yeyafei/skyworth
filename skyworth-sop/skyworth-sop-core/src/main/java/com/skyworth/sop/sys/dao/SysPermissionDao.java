@@ -1,6 +1,9 @@
 package com.skyworth.sop.sys.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import com.skyworth.sop.sys.entity.SysPermissionEntity;
 import com.baomidou.mybatisplus.mapper.BaseMapper;
@@ -13,5 +16,7 @@ import com.baomidou.mybatisplus.mapper.BaseMapper;
  */
 @Mapper
 public interface SysPermissionDao extends BaseMapper<SysPermissionEntity> {
+
+	List<SysPermissionEntity> findByUserId(@Param("userId") Integer id);
 	
 }

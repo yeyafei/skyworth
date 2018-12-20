@@ -7,36 +7,33 @@ package com.skyworth.sop.enums;
  * @email:yeyafei@hotmail.com
  * @create: 2018-12-06 15:30
  */
-public class ErrorCode {
-    /**
-     * 系统枚举类型
-     *
-     */
-    public enum SysErrorType {
-        SYSTEM_ERROR("S40001","系统错误");
+public enum ErrorCode {
 
-        private String code;
-        private String desc;
+	SYSTEM_ERROR("S00001", "系统错误"),
 
-        private SysErrorType(String code, String desc) {
+	USER_NOT_EXIST("S00002", "用户不存在");
+
+	private String code;
+	private String desc;
+
+	private ErrorCode(String code, String desc) {
             this.setCode(code);
             this.setDesc(desc);
         }
 
-        public String getCode() {
-            return code;
-        }
+	public String getCode() {
+		return code;
+	}
 
-        public void setCode(String code) {
-            this.code = code;
-        }
+	public void setCode(String code) {
+		this.code = code;
+	}
 
-        public String getDesc() {
-            return desc;
-        }
+	public String getDesc() {
+		return desc;
+	}
 
-        public void setDesc(String desc) {
-            this.desc = desc;
-        }
-    }
+	public void setDesc(String desc) {
+		this.desc = desc;
+	}
 }

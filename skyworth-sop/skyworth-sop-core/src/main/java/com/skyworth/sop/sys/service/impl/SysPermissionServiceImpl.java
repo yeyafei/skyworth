@@ -1,5 +1,7 @@
 package com.skyworth.sop.sys.service.impl;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
 
@@ -15,6 +17,12 @@ import com.skyworth.sop.sys.service.SysPermissionService;
  */
 @Service("sysPermissionService")
 public class SysPermissionServiceImpl extends ServiceImpl<SysPermissionDao, SysPermissionEntity> implements SysPermissionService {
+
+	@Override
+	public List<SysPermissionEntity> findByUserId(Integer id) {
+		// TODO Auto-generated method stub
+		return baseMapper.findByUserId(id);
+	}
 
 
 }
