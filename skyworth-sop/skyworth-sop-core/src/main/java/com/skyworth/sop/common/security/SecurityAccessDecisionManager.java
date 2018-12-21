@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 import com.skyworth.sop.sys.entity.SysPermissionEntity;
 
 /**
- * @Description: TODO
+ * @Description: 验证权限
  * @author yyf
  * @date 2018年3月26日 下午8:51:07
  * @version 1.0

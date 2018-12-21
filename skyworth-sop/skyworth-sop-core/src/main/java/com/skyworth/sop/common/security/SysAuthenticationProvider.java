@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 
 
 /**
- *
+ * 自定义验证登录信息
  *
  * @author yyf
  * @date 2018年12月20日
@@ -25,9 +25,7 @@ public class SysAuthenticationProvider implements AuthenticationProvider {
 	public Authentication authenticate(Authentication authentication) throws AuthenticationException {
 		String userName = (String) authentication.getPrincipal(); 
 		String password = (String) authentication.getCredentials(); 
-
 		UserDetails userInfo = userDetailsService.loadUserByUsername(userName);
-
 		if (!userInfo.getPassword().equals(password)) {
 			throw new BadCredentialsException("password error");
 		}

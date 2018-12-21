@@ -10,9 +10,15 @@ package com.skyworth.sop.enums;
 public enum ErrorCode {
 
 	SYSTEM_ERROR("S00001", "系统错误"),
+	
+	PLZ_LOGIN("S00002", "请登录"),
 
-	USER_NOT_EXIST("S00002", "用户不存在");
+	USER_NOT_EXIST("S00003", "用户不存在"),
 
+	USER_NO_PERMISSION("S00004", "无权限"),
+	
+	USER_PASSWORD_ERROR("S00005", "密码错误"),;
+	
 	private String code;
 	private String desc;
 

@@ -19,7 +19,7 @@ import com.skyworth.sop.sys.service.SysPermissionService;
 import com.skyworth.sop.sys.service.SysUserService;
 
 /**
- * @Description: TODO
+ * @Description: SecurityUserService
  * @author yyf
  * @date 2018年3月26日 下午8:56:02
  * @version 1.0
