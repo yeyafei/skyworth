@@ -42,7 +42,7 @@
         <dependency>
             <groupId>com.skyworth.sop.frame</groupId>
             <artifactId>skyworth-sop-frame</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>0.0.2-SNAPSHOT</version>
         </dependency>
 
 	</dependencies>

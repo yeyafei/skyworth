@@ -1,5 +1,7 @@
 package com.skyworth.sop.test.service.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,7 @@ import com.skyworth.sop.test.entity.TestEntity;
 import com.skyworth.sop.test.frm.TestFrm;
 import com.skyworth.sop.test.service.TestService;
 import com.skyworth.sop.test.vo.TestVo;
+import com.skyworth.sop.utils.JsonMapper;
 import com.skyworth.sop.utils.Query;
 
 /**
@@ -21,10 +24,14 @@ import com.skyworth.sop.utils.Query;
  */
 @Service("testService")
 public class TestServiceImpl extends ServiceImpl<TestDao, TestEntity> implements TestService {
+	
+	private static final Logger LOGGER=LoggerFactory.getLogger(TestServiceImpl.class);
+	
 	@Autowired
 	private TestDao testDao;
 	@Override
 	public R<Page<TestVo>> queryPage(TestFrm frm) {
+		LOGGER.info("TestServiceImpl.queryPage frm:"+JsonMapper.toJsonString(frm));
 		Page<TestVo> page = new Query<TestVo>(frm.pageParam()).getPage();
 		page.setRecords(testDao.queryPage(page, frm));
 		return new R<Page<TestVo>>().ok(page);
